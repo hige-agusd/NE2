@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Encuestas</title>
+  <!-- <script type="text/javascript" src="js/lib/templater.js"></script>
+  <script type="text/javascript" src="js/lib/router.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+  <script data-main="js/app" src="js/lib/require.js"></script>
+  <script type="text/html" id="home">
+    <h1>Router FTW!</h1>
+  </script>
+  <script type="text/html" id="template1">
+    <h1>Page 1: <%= greeting %></h1>
+    <p><%= moreText %></p>
+  </script>
+  <script type="text/html" id="template2">
+    <h1>Page 2: <%= heading %></h1>
+    <p>Lorem ipsum...</p>
+  </script>
+</head>
+<body>
+
+  <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#/page1">Page 1</a></li>
+      <li><a href="#/page2">Page 2</a></li>
+    </ul>
+    <div id="view"></div>
+
+</body>
+</html>
