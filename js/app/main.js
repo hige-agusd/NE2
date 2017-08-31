@@ -3,4 +3,5 @@ define(["jquery", "jquery.alpha", "jquery.beta","templater","router"], function(
     $(function() {
         $('body').alpha().beta();
     });
+    router();
 });

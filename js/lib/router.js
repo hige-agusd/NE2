@@ -6,6 +6,7 @@ function route (path, templateId, controller) {
 }
 
 route('/', 'home', function () {});
+route('/login', 'login', function () {});
 route('/page1', 'template1', function () {
     this.greeting = 'Hello world!';
     this.moreText = 'Bacon ipsum...';

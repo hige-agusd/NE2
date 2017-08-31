@@ -7,6 +7,7 @@ requirejs.config({
     "paths": {
       "app": "../app",
       "jquery": "https://code.jquery.com/jquery-3.2.1",
+      "bootstrap": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js",
       "router": "../lib/router",
       "templater": "../lib/templater"
     }

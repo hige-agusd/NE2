@@ -1,0 +1,51 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #008fc3;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-image: url('../resources/img/pp.jpeg');
+  height: 100%;
+  width: 100%;
+}
+#view {
+  height: 100%;
+}
+.btn.iniciar {
+  background-color: #ccc;
+  border-color: #333;
+  bottom: 15%;
+  font-size: 35px;
+  height: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 230px;
+}
+h1{
+  font-size: 80px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.login .form {
+  margin-top: 35%;
+}
+.login input {
+  font-size: 40px;
+  height: 50px;
+  margin-left: 10%;
+  margin-bottom: 15px;
+  width: 75%;
+}
+.login button {
+  margin-left: 10%;
+  background-color: #ccc;
+  border-color: #333;
+  font-size: 35px;
+  height: 75px;
+  width: 230px;
+}
