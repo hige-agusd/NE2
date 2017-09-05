@@ -11,6 +11,10 @@ route('/page1', 'template1', function () {
     this.greeting = 'Hello world!';
     this.moreText = 'Bacon ipsum...';
 });
+route('/carga', 'carga', function () {
+  console.log('carrrrga')
+  requirejs(["carga"], function() { });
+});
 route('/page2', 'template2', function () {
     this.heading = 'I\'m page two!';
 });
@@ -24,7 +28,7 @@ function router () {
     // Get route by url:
     var route = routes[url];
     // Do we have both a view and a route?
-    if (el && route.controller) {
+    if (el && route.controller && route.templateId) {
         // Render route template with John Resig's template engine:
         el.innerHTML = tmpl(route.templateId, new route.controller());
     }

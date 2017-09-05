@@ -15,15 +15,18 @@
   <script type="text/html" id="home">
     <a class="iniciar btn primary-btn" href="#/login">Iniciar</a>
   </script>
+  <script type="text/html" id="carga">
+  </script>
   <script type="text/html" id="login">
     <section class="login">
       <h1>Ingreso</h1>
-      <div class="form">
-        <input type="email" placeholder="Direccion de email"/>
+      <form class="form">
+        <input type="email" placeholder="Direccion de email" required/>
         <input type="password" placeholder="Contraseña" />
         <br />
-        <button type="submit">Ingresar</button>
-      </div>
+        <a class="iniciar btn primary-btn" href="#/carga">Ingresar</a>
+        <!--<button type="submit">Ingresar</button>-->
+      </form>
     </section>
   </script>
   <script type="text/html" id="template1">
