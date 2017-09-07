@@ -13,6 +13,19 @@ body {
 #view {
   height: 100%;
 }
+.contenedor-mesas {
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 35%;
+  position: absolute;
+  width: 230px;
+}
+.mesa-btn {
+  margin-bottom: 15px;
+}
 .btn.primary-btn {
   background-color: #ccc;
   border-color: #333;
@@ -33,6 +46,16 @@ h1{
   margin-left: 20px;
   margin-top: 10px;
 }
+h2{
+  font-size: 50px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+h3{
+  font-size: 45px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
 .login .form {
   margin-top: 35%;
 }
@@ -50,4 +73,54 @@ h1{
   font-size: 35px;
   height: 75px;
   width: 230px;
+}
+.carga .header {
+  margin-bottom: 15%;
+  width: 100%;
+}
+.carga .datos {
+  height: 60%;
+  margin-left: 2%;
+  width: 100%;
+}
+.carga .datos .diputados,
+.carga .datos .legisladores {
+  display: inline-block;
+  margin-left: 4%;
+  width: 45%;
+}
+.carga .datos h3 {
+  width: 100%;
+}
+.carga .datos input {
+  font-size: 60px;
+  height: 80%;
+  margin-left: 2%;
+  width: 80%;
+}
+.recuento span {
+  font-size: 27px;
+  border: 1px solid #ccc;
+}
+.recuento .encabezado span {
+  font-weight: bold;
+  background-color: #ccc;
+}
+.recuento .detalle {
+  background-color: #333;
+  color: #ddd;
+}
+.recuento .detalle.par {
+  background-color: #ccc;
+  color: #000;
+}
+.resultados .encabezado span {
+  font-size: 27px;
+  font-weight: bold;
+}
+.resultados .detalle span {
+  font-size: 20px;
+}
+.resultados .barra {
+  height: 40px;
 }

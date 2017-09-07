@@ -10,7 +10,10 @@ requirejs.config({
       "bootstrap": "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js",
       "router": "../lib/router",
       "templater": "../lib/templater",
-      "carga": "../app/carga/carga"
+      "mesas": "../app/mesas/mesas",
+      "carga": "../app/carga/carga",
+      "confirmacion": "../app/confirmacion/confirmacion",
+      "resultados": "../app/resultados/resultados",
     }
 });
 

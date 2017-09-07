@@ -12,8 +12,16 @@ route('/page1', 'template1', function () {
     this.moreText = 'Bacon ipsum...';
 });
 route('/carga', 'carga', function () {
-  console.log('carrrrga')
   requirejs(["carga"], function() { });
+});
+route('/mesas', 'mesas', function () {
+  requirejs(["mesas"], function() { });
+});
+route('/confirmacion', 'confirmacion', function () {
+  requirejs(["confirmacion"], function() { });
+});
+route('/resultados', 'resultados', function () {
+  requirejs(["resultados"], function() { });
 });
 route('/page2', 'template2', function () {
     this.heading = 'I\'m page two!';
