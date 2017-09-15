@@ -36,4 +36,4 @@
     }
     storage.setItem('resultados', JSON.stringify(resultados));
   }
-})()
+})();

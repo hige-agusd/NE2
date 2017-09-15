@@ -6,9 +6,10 @@
     par = false,
     resultados = JSON.parse(storage.getItem('resultados'));
   var fuerzas = {
-    "l603": {"color": "fe0", "nombre": "Vamos Juntos"},
+    "l502": {"color": "fe0", "nombre": "Vamos Juntos"},
     "l501": {"color": "008fc3", "nombre": "Unidad Porteña"},
-    "l333": {"color": "bb98d6", "nombre": "1 Pais"}
+    "l503": {"color": "008fc3", "nombre": "Evolucion"},
+    "l507": {"color": "bb98d6", "nombre": "1 Pais"}
   };
   $("#view").load(template, setConfirmacion);
   function setConfirmacion() {
@@ -22,10 +23,10 @@
     $.each(resultados, function(lista, resultado) {
       var listaNum = lista.substr(1);
       console.log(lista, resultado)
-      var fuerza = $('<span class="col-xs-6"></span>');
-      var dips = $('<span class="col-xs-3"></span>');
-      var legs = $('<span class="col-xs-3"></span>');
-      fuerza.html(fuerzas[lista].nombre + ' (' + listaNum + ')' );
+      var fuerza = $('<span class="nom-fuerza col-xs-6"></span>');
+      var dips = $('<span class="votos col-xs-3"></span>');
+      var legs = $('<span class="votos col-xs-3"></span>');
+      fuerza.html(listaNum + '<br>' + fuerzas[lista].nombre);
       dips.html(resultado.diputados);
       legs.html(resultado.legisladores);
       var detalle = $('<div class="row detalle"> </div>');

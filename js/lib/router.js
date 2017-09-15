@@ -5,7 +5,11 @@ function route (path, templateId, controller) {
   routes[path] = {templateId: templateId, controller: controller};
 }
 
-route('/', 'home', function () {});
+route('/', 'home', function () {
+    setTimeout(function () {
+        window.location.href = '#/login';
+    },2000)
+});
 route('/login', 'login', function () {});
 route('/page1', 'template1', function () {
     this.greeting = 'Hello world!';

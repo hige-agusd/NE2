@@ -13,7 +13,11 @@
   <link rel="stylesheet" href="css/styles.css">
   <script data-main="js/app" src="js/lib/require.js"></script>
   <script type="text/html" id="home">
-    <a class="iniciar btn primary-btn" href="#/login">Iniciar</a>
+    <div class="home">
+      <div class="logo"></div>
+      <p>Cuidando nuestros votos</p>
+      <a class="iniciar btn primary-btn" href="#/login">Iniciar</a>
+    </div>
   </script>
   <script type="text/html" id="mesas"> </script>
   <script type="text/html" id="carga"> </script>
@@ -21,13 +25,11 @@
   <script type="text/html" id="resultados"> </script>
   <script type="text/html" id="login">
     <section class="login">
-      <h1>Ingreso</h1>
       <form class="form">
-        <input type="email" placeholder="Direccion de email" required/>
-        <input type="password" placeholder="Contraseña" />
+        <input type="email" class="user" placeholder="Direccion de mail" required/>
+        <input type="password" class="mail" placeholder="Contraseña" />
         <br />
-        <a class="iniciar btn primary-btn" href="#/mesas">Ingresar</a>
-        <!--<button type="submit">Ingresar</button>-->
+        <a class="btn primary-btn" href="#/mesas">Iniciar</a>
       </form>
     </section>
   </script>
