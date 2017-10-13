@@ -30,6 +30,11 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
+      .when('/mesas', {
+        templateUrl: 'views/mesas.html',
+        controller: 'MesasCtrl',
+        controllerAs: 'mesas'
+      })
       .otherwise({
         redirectTo: '/'
       });
