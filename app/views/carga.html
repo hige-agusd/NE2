@@ -1,0 +1,26 @@
+<div class="container-fluid carga" ng-if="lista">
+  <header class="container-fluid head">
+    <span class="mesa-head">Mesa N° <span class="num-mesa">999</span></span>
+  </header>
+  <main class="container-fluid datos">
+    <div class="banner-lista">
+      <div class="numero-lista-wrapper">
+        <span class="numero-lista"></span>
+      </div>
+      <div class="logo-lista"></div>
+    </div>
+    <form ng-submit="agregarDatos($event)">
+      <div class="diputados">
+        <label>Diputados</label>
+        <input type="number" id="diputados" ng-model="votos.diputados">
+      </div>
+      <div class="legisladores">
+        <label>Legisladores</label>
+        <input type="number" id="legisladores" ng-model="votos.legisladores">
+      </div>
+      <div class="boton container">
+        <button type="submit" name="button" class="btn primary-btn siguiente">Seguir</button>
+      </div>
+    </form>
+  </main>
+</div>

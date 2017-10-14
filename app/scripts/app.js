@@ -33,7 +33,12 @@ angular
       .when('/mesas', {
         templateUrl: 'views/mesas.html',
         controller: 'MesasCtrl',
-        controllerAs: 'mesas'
+        controllerAs: 'mesasctrl'
+      })
+      .when('/carga', {
+        templateUrl: 'views/carga.html',
+        controller: 'CargaCtrl',
+        controllerAs: 'carga'
       })
       .otherwise({
         redirectTo: '/'

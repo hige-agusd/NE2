@@ -1,0 +1,14 @@
+<div class="container-fluid mesas">
+  <header class="head">
+    <span class="encabezado-mesas">Circuito electoral N°<span class="circuito">{{mesas.circuito}}</span></span>
+  </header>
+  <main class="container-fluid">
+    <h2>Mesa N°</h2>
+    <div class="contenedor-mesas container-fluid">
+      <button class="mesa-btn primary-btn btn"
+              ng-repeat="mesa in mesas.mesas"
+              ng-click="setMesa(mesa)"
+      >{{mesa}}</button>
+    </div>
+  </main>
+</div>

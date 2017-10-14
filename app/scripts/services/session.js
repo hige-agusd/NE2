@@ -11,11 +11,17 @@ angular.module('escrutinioApp')
   .service('SessionSrv', ['$http', '$q', 'ConfigSrv', function ($http, $q, ConfigSrv) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var self = {},
-      authToken;
+      authToken,
+      user;
 
     self.login = function(params) {
+      var data = {
+        username: params.name,
+        password: params.password
+      }
       var deferred = $q.defer();
-      $http.get(ConfigSrv.getBaseUrl() + params).then(function(response) {
+      $http.post(ConfigSrv.getBaseUrl() + 'login', data).then(function(response) {
+        user = params.name;
         authToken = response.authToken;
         deferred.resolve(authToken);
       }, function (err) {
@@ -26,6 +32,10 @@ angular.module('escrutinioApp')
 
     self.getToken = function() {
       return authToken;
+    };
+
+    self.getUser = function() {
+      return user;
     };
 
     return self;

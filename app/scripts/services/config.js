@@ -12,7 +12,7 @@ angular.module('escrutinioApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
     var self = {
       map: {
-        baseUrl: ''
+        baseUrl: 'http://fct.hopto.org:8081/FiscalizacionNE/api/'
       }
     };
     
