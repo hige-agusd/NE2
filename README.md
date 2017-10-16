@@ -5,8 +5,11 @@ version 0.16.0.
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run:
+`npm install`
+`bower install`
+`gulp build`
 
-## Testing
+Copiar el directorio `dist`
 
-Running `grunt test` will run the unit tests with karma.
+
