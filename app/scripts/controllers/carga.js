@@ -8,14 +8,16 @@
  * Controller of the escrutinioApp
  */
 angular.module('escrutinioApp')
-  .controller('CargaCtrl', ['$location', '$scope', 'ListasSrv', 'MesasSrv', 'ResultadosSrv', 
+  .controller('CargaCtrl', ['$location', '$scope', 'ListasSrv', 'MesasSrv', 'ResultadosSrv',
     function ($location, $scope, ListasSrv, MesasSrv, ResultadosSrv) {
 
     $scope.partido = false;
     $scope.listas = false;
     $scope.mesa = MesasSrv.getMesa();
     $scope.votos = {};
-      
+    $scope.lista;
+    $scope.nombre;
+
     ListasSrv.getListas().then(
       function(response) {
         $scope.listas = response;
@@ -27,6 +29,8 @@ angular.module('escrutinioApp')
       var lista = $scope.listas.shift();
       var resultados = ResultadosSrv.getDatosListaMesa(MesasSrv.getMesa(), lista.lista);
       $scope.partido = lista;
+      $scope.lista = 'Lista ' + lista.lista;
+      $scope.nombre = ([0, 100].indexOf(lista.lista) >= 0) ? lista.nombre : '';
       if(resultados) {
         $scope.votos.diputados = resultados.diputados;
         $scope.votos.legisladores = resultados.legisladores;

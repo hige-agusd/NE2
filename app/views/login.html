@@ -3,7 +3,9 @@
     <input type="text" ng-model="user.name" class="user" placeholder="Direccion de mail" required/>
     <input type="password" ng-model="user.password" class="mail" placeholder="Contraseña" required/>
     <br />
-    <p ng-if="errMsg">{{errMsg}}</p>
+    <div class="error-message">
+      <p ng-show="errMsg">{{errMsg}}</p>
+    </div>
     <input type="submit" class="btn primary-btn" value="Iniciar" ng-disabled="!login.$valid"/>
   </form>
 </section>

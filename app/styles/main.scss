@@ -26,14 +26,20 @@ body * {
 }
 .view {
   height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 .view-container {
   height: 100%;
+  padding: 0;
 }
 .home {
   height: 100%;
   width: 100%;
   align-content: center;
+  position: fixed;
+  top: 0;
 }
 .home .logo {
   background-image: url('../images/logo_up.png');
@@ -47,7 +53,7 @@ body * {
 .home p {
   color: #fff;
   font-family: helveticaLTS;
-  font-size: 43px;
+  font-size: 22.5px;
   font-weight: bold;
   margin-top: 5%;
   text-align: center;
@@ -57,9 +63,9 @@ body * {
   background-color: #ccc;
   border-color: #333;
   bottom: 15%;
-  font-size: 35px;
-  height: 75px;
-  width: 230px;
+  font-size: 15.5px;
+  height: 37.5px;
+  width: 115px;
 }
 .btn.iniciar {
   display: none;
@@ -75,9 +81,9 @@ h1{
   margin-top: 10px;
 }
 h2{
-  font-size: 50px;
-  margin-left: 20px;
-  margin-top: 10px;
+  font-size: 25px;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 h3{
   font-size: 45px;
@@ -90,24 +96,25 @@ h3{
 }
 .login input {
   color: #333740;
-  font-size: 40px;
-  height: 90px;
+  border-width: 1px;
+  font-size: 21px;
+  height: 46px;
   margin-left: 6%;
   margin-bottom: 7%;
-  padding-left: 80px;
+  padding-left: 42px;
   width: 88%;
 }
 .login input.user {
-  background-image: url('../resources/img/user.png');
+  background-image: url('../images/user.png');
   background-position: 6px;
   background-repeat: no-repeat ;
-  background-size: 60px;
+  background-size: 30px;
 }
 .login input.mail {
-  background-image: url('../resources/img/lock.png');
+  background-image: url('../images/lock.png');
   background-position: 6px;
   background-repeat: no-repeat ;
-  background-size: 60px;
+  background-size: 30px;
 }
 .login input:focus {
   background-color: #f8c000;
@@ -115,13 +122,23 @@ h3{
 .login .form .btn {
   background-color: #f8c000;
   border: none;
+  border-radius: 2px;
+  box-shadow: none;
   color: #333740;
-  font-size: 50px;
-  height: 90px;
+  font-size: 26px;
+  height: 47px;
   margin-left: 6%;
-  margin-top: 12%;
+  margin-top: 5%;
+  padding: 4px 10px;
   text-transform: uppercase;
   width: 88%;
+}
+.login .error-message {
+  color: #660000;
+  font-weight: bold;
+  height: 30px;
+  text-align: center;
+  width: 100%;
 }
 
 .mesas {
@@ -131,13 +148,13 @@ h3{
 .mesas .head {
   color: #fff;
   height: 10%;
-  min-height: 123px;
+  min-height: 61.5px;
   padding-left: 10%;
   padding-top: 4%;
   text-transform: uppercase;
 }
 .mesas .head .encabezado-mesas{
-  font-size: 46px;
+  font-size: 23px;
   letter-spacing: 1px;
   text-align: center;
   width: 100%;
@@ -168,8 +185,8 @@ h3{
   border: none;
   border-radius: 1px;
   color: #fff;
-  font-size: 50px;
-  height: 100px;
+  font-size: 25px;
+  height: 50px;
   margin-bottom: 6%;
   width: 100%;
 }
@@ -181,12 +198,12 @@ h3{
   color: #fff;
   height: 10%;
   font-weight: bold;
-  min-height: 123px;
+  min-height: 61.5px;
   padding-left: 10%;
   padding-top: 4%;
 }
 .carga .head .mesa-head{
-  font-size: 46px;
+  font-size: 23px;
   letter-spacing: 1px;
   text-align: center;
   width: 100%;
@@ -208,7 +225,7 @@ h3{
   display: inline-block;
 }
 .carga .datos .banner-lista .numero-lista-wrapper{
-  border-right: 3px solid #0a96d3;
+  border-right: 1.5px solid #0a96d3;
   height: 70%;
   margin-top: 8%;
   padding-right: 3%;
@@ -219,28 +236,36 @@ h3{
 }
 .carga .datos .banner-lista .numero-lista{
   color: #0a96d3;
-  font-size: 50px;
+  font-size: 25px;
   font-weight: bold;
 }
 .carga .datos .banner-lista .logo-lista{
   background-position: center center;
   background-repeat:no-repeat;
   background-size: contain;
+  color: #0a96d3;
+  font-size: 25px;
+  font-weight: bold;
   height: 80%;
   margin-top: 7%;
+  text-align: center;
+  vertical-align: middle;
   width: 50%;
 }
+.carga .datos .banner-lista .logo-lista.texto{
+  margin-top: 12%;
+}
 .carga .datos .banner-lista .logo-lista.logo-img-pro{
-  background-image: url('../resources/img/lista_vamos_juntos.png');
+  background-image: url('../images/lista_vamos_juntos.png');
 }
 .carga .datos .banner-lista .logo-lista.logo-img-up{
-  background-image: url('../resources/img/lista_unidad_port.png');
+  background-image: url('../images/lista_unidad_port.png');
 }
 .carga .datos .banner-lista .logo-lista.logo-img-1p{
-  background-image: url('../resources/img/lista_1_pais.png');
+  background-image: url('../images/lista_1_pais.png');
 }
 .carga .datos .banner-lista .logo-lista.logo-img-ec{
-  background-image: url('../resources/img/lista_evolucion.png');
+  background-image: url('../images/lista_evolucion.png');
 }
 .carga .datos .diputados,
 .carga .datos .legisladores {
@@ -250,7 +275,7 @@ h3{
   width: 80%;
 }
 .carga .datos label {
-  font-size: 45px;
+  font-size: 22.5px;
   font-weight: normal;
   margin-right: 8%;
   width: 40%;
@@ -259,7 +284,7 @@ h3{
   background: #b2b2b2;
   border: none;
   border-radius: 2px;
-  font-size: 60px;
+  font-size: 30px;
   height: 80%;
   margin-left: 2%;
   padding-right: 3%;
@@ -270,10 +295,13 @@ h3{
   display: inline-flex;
   margin-top: 15%;
 }
+.carga .datos .boton.container {
+  width: 100%;
+}
 .carga .datos .boton button {
   background-color: #0a96d3;
   border: none;
-  border-radius: 2px;
+  border-radius: 1px;
   color: #fff;
   margin-left: auto;
   margin-right: auto;
@@ -286,12 +314,12 @@ h3{
   color: #fff;
   height: 10%;
   font-weight: bold;
-  min-height: 123px;
+  min-height: 61.5px;
   padding-left: 10%;
   padding-top: 4%;
 }
 .confirmacion .head h1{
-  font-size: 46px;
+  font-size: 23px;
   letter-spacing: 1px;
   text-align: left;
   text-transform: uppercase;
@@ -299,7 +327,7 @@ h3{
 }
 .confirmacion main {
   background: #fff;
-  background-image: url('../resources/img/logo_up.png');
+  background-image: url('../images/logo_up.png');
   background-position: 170% 135%;
   background-repeat:no-repeat;
   height: 90%;
@@ -313,7 +341,7 @@ h3{
 .recuento .encabezado span {
   border: none;
   color: #0a96d3;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -327,15 +355,18 @@ h3{
   padding-bottom: 3%;
 }
 .recuento .detalle .nom-fuerza {
-  font-size: 40px;
+  font-size: 18px;
 }
 .recuento .detalle .votos {
   border-left: 1px solid #333740;
-  font-size: 80px;
+  font-size: 40px;
   text-align: right;
 }
 .recuento .detalle.par {
   background-color: #b2b2b2;
+}
+.confirmacion .boton.container {
+  width: 100%;
 }
 .confirmacion .boton {
   display: inline-flex;
@@ -346,10 +377,29 @@ h3{
   border: none;
   border-radius: 2px;
   color: #fff;
-  font-size: 40px;
+  font-size: 20px;
   margin-left: auto;
   margin-right: auto;
   text-transform: uppercase;
+  width: 130px;
+}
+.confirmacion .boton button.corregir {
+  background-color: #e3e3e3;
+  color: #666;
+}
+.confirmacion .mensaje-confirmacion {
+  color: #fff;
+  font-size: 20px;
+  height: 30px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  &.ok {
+    background: green;
+  }
+  &.error{
+    background: #aa0000;
+  }
 }
 .resultados {
   height: 100%;
@@ -359,12 +409,12 @@ h3{
   color: #fff;
   height: 10%;
   font-weight: bold;
-  min-height: 123px;
+  min-height: 61.5px;
   padding-left: 10%;
   padding-top: 4%;
 }
 .resultados .header h1{
-  font-size: 46px;
+  font-size: 23px;
   letter-spacing: 1px;
   margin-left: 0;
   text-align: left;
@@ -383,7 +433,7 @@ h3{
 }
 .porcentajes .encabezado span {
   color: #0a96d3;
-  font-size: 45px;
+  font-size: 22.5px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -392,11 +442,11 @@ h3{
   text-align: right;
 }
 .porcentajes .detalle .fuerza {
-  font-size: 32px;
-  line-height: 29px;
+  font-size: 16px;
+  line-height: 14.5px;
 }
 .porcentajes .barra {
-  font-size: 35px;
+  font-size: 16.5px;
   font-weight: bold;
-  height: 57px;
+  height: 28.5px;
 }

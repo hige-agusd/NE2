@@ -10,16 +10,17 @@
         <span class="col-xs-3">Sen.</span>
       </div>
       <div class="row detalle" ng-class="{par: lista.par}" ng-repeat="lista in resultados">
-        <span class="nom-fuerza col-xs-6">{{lista.lista + lista.nombre}}</span>
+        <span class="nom-fuerza col-xs-6">{{lista.lista}} <br/> {{lista.nombre}}</span>
         <span class="votos col-xs-3">{{lista.diputados}}</span>
         <span class="votos col-xs-3">{{lista.legisladores}}</span>
       </div>
     </div>
     <div class="container boton">
       <button type="button" name="button" ng-click="corregir()" class="btn primary-btn corregir">Corregir</button>
-    </div>
-    <div class="container boton">
       <button type="button" name="button" ng-click="cargarMesa()" class="btn primary-btn enviar">Enviar</button>
+    </div>
+    <div class="mensaje-confirmacion" ng-class="{error: (!ok && mensaje), ok:(ok && mensaje)}">
+      <span>{{mensaje}}</span>
     </div>
   </main>
 </div>
