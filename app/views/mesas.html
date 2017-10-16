@@ -7,7 +7,7 @@
     <div class="contenedor-mesas container-fluid">
       <button class="mesa-btn primary-btn btn"
               ng-repeat="mesa in mesas.mesas"
-              ng-click="setMesa(mesa)"
+              ng-click="setMesa($event, mesa)"
       >{{mesa}}</button>
     </div>
   </main>

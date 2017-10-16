@@ -1,0 +1,25 @@
+<div class="container-fluid confirmacion">
+  <header class="container-fluid head">
+    <h1>Confirmación</h1>
+  </header>
+  <main>
+    <div class="recuento">
+      <div class="row encabezado">
+        <span class="col-xs-6">Lista</span>
+        <span class="col-xs-3">Dip.</span>
+        <span class="col-xs-3">Sen.</span>
+      </div>
+      <div class="row detalle" ng-class="{par: lista.par}" ng-repeat="lista in resultados">
+        <span class="nom-fuerza col-xs-6">{{lista.lista + lista.nombre}}</span>
+        <span class="votos col-xs-3">{{lista.diputados}}</span>
+        <span class="votos col-xs-3">{{lista.legisladores}}</span>
+      </div>
+    </div>
+    <div class="container boton">
+      <button type="button" name="button" ng-click="corregir()" class="btn primary-btn corregir">Corregir</button>
+    </div>
+    <div class="container boton">
+      <button type="button" name="button" ng-click="cargarMesa()" class="btn primary-btn enviar">Enviar</button>
+    </div>
+  </main>
+</div>

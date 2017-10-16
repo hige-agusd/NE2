@@ -1,11 +1,11 @@
-<div class="container-fluid carga" ng-if="lista">
+<div class="container-fluid carga" ng-show="partido">
   <header class="container-fluid head">
-    <span class="mesa-head">Mesa N° <span class="num-mesa">999</span></span>
+    <span class="mesa-head">Mesa N° <span class="num-mesa">{{mesa}}</span></span>
   </header>
   <main class="container-fluid datos">
     <div class="banner-lista">
       <div class="numero-lista-wrapper">
-        <span class="numero-lista"></span>
+        <span class="numero-lista">{{partido.lista}}</span>
       </div>
       <div class="logo-lista"></div>
     </div>

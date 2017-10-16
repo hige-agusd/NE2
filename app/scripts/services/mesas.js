@@ -8,19 +8,35 @@
  * Service in the escrutinioApp.
  */
 angular.module('escrutinioApp')
-  .service('MesasSrv', ['$q', 'SessionSrv', function ($q, SessionSrv) {
+  .service('MesasSrv', ['$http', '$q', 'ConfigSrv', 'SessionSrv',
+    function ($http, $q, ConfigSrv, SessionSrv) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var mesas,
       mesaActual,
       self = {};
 
     self.getMesas = function() {
-      mesas = {
-        circuito: 5,
-        mesas: [5857, 5858]
-      };
-      return mesas;
+      var deferred = $q.defer();
+      var header = {"x-auth-token": SessionSrv.getToken()};
+      $http.get(ConfigSrv.getBaseUrl() + 'fiscalApi/getMesas', {"headers": header}).then(
+        function(response) {
+          mesas = parseMesas(response.data);
+          deferred.resolve(mesas);
+        }, function(err) {
+          deferred.reject(err);
+        });
+      //return mesas;
+      return deferred.promise;
     };
+
+    function parseMesas(mesas) {
+      var retVal = {
+        circuito: mesas[0].escuela,
+        mesas: _.map(mesas, 'mesa')
+      };
+      console.log(retVal);
+      return retVal
+    }
 
     self.setMesa = function(mesa) {
       mesaActual = mesa;

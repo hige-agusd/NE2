@@ -10,14 +10,13 @@
 angular.module('escrutinioApp')
   .controller('LoginCtrl', ['$location', '$scope', 'SessionSrv', function($location, $scope, SessionSrv) {
     $scope.errMsg = "";
-    $scope.submit = function($event) {
+    $scope.submit = function() {
       $scope.errMsg = "";
-      SessionSrv.login($scope.user).then(function(response) {
-        //go to mesas
+      SessionSrv.login($scope.user).then(function() {
         $location.url('/mesas');
       }, function (err) {
-        $scope.errMsg = 'Usuario y/o contraseña incorrectos'
-
-      })
+        $scope.errMsg = 'Usuario y/o contraseña incorrectos';
+        console.log(err);
+      });
     };
   }]);

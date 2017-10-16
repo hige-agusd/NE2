@@ -18,11 +18,10 @@ angular.module('escrutinioApp')
       var data = {
         username: params.name,
         password: params.password
-      }
+      };
       var deferred = $q.defer();
-      $http.post(ConfigSrv.getBaseUrl() + 'login', data).then(function(response) {
-        user = params.name;
-        authToken = response.authToken;
+      $http.post(ConfigSrv.getBaseUrl() + 'api/login', data).then(function(response) {
+        authToken = response.data.access_token;
         deferred.resolve(authToken);
       }, function (err) {
         deferred.reject(err);

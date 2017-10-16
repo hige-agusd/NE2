@@ -10,7 +10,9 @@
 angular.module('escrutinioApp')
   .controller('MesasCtrl', ['$location', '$scope', 'MesasSrv', function ($location, $scope, MesasSrv) {
     
-    $scope.mesas = MesasSrv.getMesas();
+    MesasSrv.getMesas().then(function(mesas) {
+      $scope.mesas = mesas;
+    });
     
     $scope.setMesa = function(e, mesa) {
       MesasSrv.setMesa(mesa);

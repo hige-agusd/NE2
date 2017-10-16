@@ -40,6 +40,11 @@ angular
         controller: 'CargaCtrl',
         controllerAs: 'carga'
       })
+      .when('/confirmacion', {
+        templateUrl: 'views/confirmacion.html',
+        controller: 'ConfirmacionCtrl',
+        controllerAs: 'confirmacion'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -8,12 +8,14 @@
  * Controller of the escrutinioApp
  */
 angular.module('escrutinioApp')
-  .controller('CargaCtrl', ['$scope', 'ListasSrv', 'MesasSrv', 'ResultadosSrv', 
-    function ($scope, ListasSrv, MesasSrv, ResultadosSrv) {
+  .controller('CargaCtrl', ['$location', '$scope', 'ListasSrv', 'MesasSrv', 'ResultadosSrv', 
+    function ($location, $scope, ListasSrv, MesasSrv, ResultadosSrv) {
 
-    $scope.lista = false;
+    $scope.partido = false;
     $scope.listas = false;
-
+    $scope.mesa = MesasSrv.getMesa();
+    $scope.votos = {};
+      
     ListasSrv.getListas().then(
       function(response) {
         $scope.listas = response;
@@ -23,10 +25,30 @@ angular.module('escrutinioApp')
 
     function setLista() {
       var lista = $scope.listas.shift();
-      var resultados = ResultadosSrv.getDatosListaMesa(MesasSrv.getMesa(), lista.id);
+      var resultados = ResultadosSrv.getDatosListaMesa(MesasSrv.getMesa(), lista.lista);
+      $scope.partido = lista;
+      if(resultados) {
+        $scope.votos.diputados = resultados.diputados;
+        $scope.votos.legisladores = resultados.legisladores;
+      } else {
+        $scope.votos.diputados = '';
+        $scope.votos.legisladores = '';
+      }
     }
 
     $scope.agregarDatos = function (e) {
+      //agregar datos
+      ResultadosSrv.setDatosListaMesa({
+        mesa: MesasSrv.getMesa(),
+        lista: $scope.partido.lista,
+        id: $scope.partido.id,
+        votos: {diputados: $scope.votos.diputados, legisladores: $scope.votos.legisladores}
+      });
+      if($scope.listas.length) {
+        setLista();
+      } else {
+        $location.url('/confirmacion');
+      }
 
     };
 
