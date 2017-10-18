@@ -12,16 +12,16 @@ angular.module('escrutinioApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
     var self = {
       map: {
-        baseUrl: 'http://fct.hopto.org:8081/FiscalizacionNE/'
+        baseUrl: 'http://fti.hopto.org:8081/FiscalizacionNE/'
       }
     };
-    
+
     function getConfig() {
       $http.get('./configs/config.json').success(function(configStr) {
         self.map.baseUrl = configStr;
       });
     }
-    
+
     self.getBaseUrl = function() {
       return self.map.baseUrl;
     };

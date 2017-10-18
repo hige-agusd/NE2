@@ -11,6 +11,7 @@ angular.module('escrutinioApp')
   .service('ResultadosSrv', ['$http', '$q', 'ConfigSrv', 'SessionSrv', function ($http, $q, ConfigSrv, SessionSrv) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var resultados = [],
+      totales = [],
       self = {};
 
     self.getDatosCloned = function (haystack, needle, property) {
@@ -79,6 +80,18 @@ angular.module('escrutinioApp')
       var header = {"x-auth-token": SessionSrv.getToken()};
       $http.post(ConfigSrv.getBaseUrl() + 'fiscalApi/cargarMesas', data, {headers: header}).then(function(response) {
         deferred.resolve(response);
+      }, function(err) {
+        deferred.reject(err);
+      });
+      return deferred.promise;
+    };
+
+    self.getResultados = function() {
+      var deferred = $q.defer()
+      var header = {"x-auth-token": SessionSrv.getToken()};
+      $http.get(ConfigSrv.getBaseUrl() + 'fiscalApi/getResultados', {headers: header}).then(function(response) {
+        totales = response.data;
+        deferred.resolve(totales);
       }, function(err) {
         deferred.reject(err);
       });

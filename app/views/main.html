@@ -1,5 +1,41 @@
-<div class="home">
-  <div class="logo"></div>
-  <p>Cuidando nuestros votos</p>
-  <a class="iniciar btn primary-btn" href="#/login">Iniciar</a>
+<div class="container-fluid resultados">
+  <header class="container-fluid header">
+    <h1>Resultados</h1>
+  </header>
+  <main class="container-fluid">
+    <div class="porcentajes por-dip">
+      <div class="row encabezado dip-head ">
+        <span class="col-xs-4"></span>
+        <span class="col-xs-4 dips">Diputados</span>
+      </div>
+      <div class="row detalle" ng-repeat="resultado in resultados">
+        <span class="fuerza col-xs-4">{{resultado.partido}}</span>
+        <div class="col-xs-8">
+          <span class="col-xs-12"></span>
+          <div class="barra"
+            ng-style="{width: resultado.porcentajeDiputados + '%',
+              'background-color': calcColor(resultado.color)}">
+            {{resultado.porcentajeDiputados.toFixed(2)}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="porcentajes por-leg">
+      <div class="row encabezado leg-head ">
+        <span class="col-xs-4"></span>
+        <span class="col-xs-4 legs">Legisladores</span>
+      </div>
+      <div class="row detalle" ng-repeat="resultado in resultados">
+        <span class="fuerza col-xs-4">{{resultado.partido}}</span>
+        <div class="col-xs-8">
+          <span class="col-xs-12"></span>
+          <div class="barra"
+            ng-style="{width: resultado.porcentajeLegisladores + '%',
+              'background-color': calcColor(resultado.color)}">
+            {{resultado.porcentajeLegisladores.toFixed(2)}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </div>
