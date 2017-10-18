@@ -15,8 +15,8 @@ angular.module('escrutinioApp')
     $scope.listas = false;
     $scope.mesa = MesasSrv.getMesa();
     $scope.votos = {};
-    $scope.lista;
-    $scope.nombre;
+    $scope.lista = '';
+    $scope.nombre = '';
 
     ListasSrv.getListas().then(
       function(response) {
@@ -30,7 +30,14 @@ angular.module('escrutinioApp')
       var resultados = ResultadosSrv.getDatosListaMesa(MesasSrv.getMesa(), lista.lista);
       $scope.partido = lista;
       $scope.lista = 'Lista ' + lista.lista;
-      $scope.nombre = ([0, 100].indexOf(lista.lista) >= 0) ? lista.nombre : '';
+      switch (lista.lista) {
+        case 1:
+        case 2: $scope.nombre = lista.nombre; break;
+        case 3: $scope.nombre = 'Total'; break;
+        case 187: $scope.nombre = 'AyL'; break;
+        case 505: $scope.nombre = 'FIT'; break;
+        default: $scope.nombre = ''; break;
+      }
       if(resultados) {
         $scope.votos.diputados = resultados.diputados;
         $scope.votos.legisladores = resultados.legisladores;
