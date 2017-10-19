@@ -5,13 +5,15 @@
   <main class="container-fluid datos">
     <div class="banner-lista">
       <div class="numero-lista-wrapper">
-        <span class="numero-lista">{{lista}}</span>
+        <span class="numero-lista" ng-if="partido.lista > 3" >{{lista}}</span>
       </div>
       <div class="logo-lista"
            ng-class="{
+           'logo-img-ayl': partido.lista == 187,
            'logo-img-up': partido.lista == 501,
            'logo-img-pro': partido.lista == 502,
            'logo-img-ec': partido.lista == 503,
+           'logo-img-fit': partido.lista == 505,
            'logo-img-1p': partido.lista == 507,
            'texto': nombre
            }">

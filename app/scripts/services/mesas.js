@@ -34,7 +34,6 @@ angular.module('escrutinioApp')
         circuito: mesas[0].escuela,
         mesas: _.map(mesas, 'mesa')
       };
-      console.log(retVal);
       return retVal
     }
 

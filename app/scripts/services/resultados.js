@@ -31,9 +31,7 @@ angular.module('escrutinioApp')
         resultadosMesaLista,
         retVal = false;
       if(resultadosMesa) {
-        console.log(resultadosMesa.votos);
         resultadosMesaLista = self.getDatosCloned(resultadosMesa.votos, lista, 'lista');
-        console.log(resultadosMesaLista);
         if(resultadosMesaLista) {
           retVal = _.clone(resultadosMesaLista, true);
         }

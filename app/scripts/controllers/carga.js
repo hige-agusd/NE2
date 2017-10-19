@@ -22,8 +22,9 @@ angular.module('escrutinioApp')
       function(response) {
         $scope.listas = response;
         setLista();
-      }
-    );
+      }, function(err) {
+        $location.url('/login');
+      });
 
     function setLista() {
       var lista = $scope.listas.shift();
@@ -34,8 +35,6 @@ angular.module('escrutinioApp')
         case 1:
         case 2: $scope.nombre = lista.nombre; break;
         case 3: $scope.nombre = 'Total'; break;
-        case 187: $scope.nombre = 'AyL'; break;
-        case 505: $scope.nombre = 'FIT'; break;
         default: $scope.nombre = ''; break;
       }
       if(resultados) {

@@ -14,10 +14,21 @@ angular.module('escrutinioApp')
       $scope.resultados = [];
       $scope.mensaje = '';
       $scope.ok = true;
+      $scope.totalDiputadosMatch = true;
+      $scope.totalLegisladoresMatch = true;
+      $scope.mensajeTotales = '';
+      var totalCargado = {
+        diputados: 0,
+        legisladores: 0
+      },
+      total = {
+        diputados: 0,
+        legisladores: 0
+      };
 
       var resultados = ResultadosSrv.getDatosMesa(MesasSrv.getMesa());
 
-      if(resultados.votos.length) {
+      if(resultados && resultados.votos.length) {
         _.each(resultados.votos, function(resultadoLista, index) {
           resultadoLista.par = ((index + 1) % 2 == 0);
           switch (resultadoLista.lista) {
@@ -26,11 +37,25 @@ angular.module('escrutinioApp')
             case 507: resultadoLista.nombre = '1 País'; break;
             default:
           resultadoLista.nombre = ListasSrv.getListaPorNumero(resultadoLista.lista).nombre;
-
+          }
+          if (!resultadoLista.nombre.match(/total/ig)) {
+            total.diputados += (resultadoLista.diputados) ? resultadoLista.diputados : 0;
+            total.legisladores += (resultadoLista.legisladores) ? resultadoLista.legisladores : 0;
+          } else {
+            totalCargado.diputados = (resultadoLista.diputados) ? resultadoLista.diputados : 0;
+            totalCargado.legisladores = (resultadoLista.legisladores) ? resultadoLista.legisladores : 0;
           }
           $scope.resultados.push(resultadoLista);
         });
+      } else {
+        $location.url('/login');
       }
+
+      if(total.diputados != totalCargado.diputados ||
+          total.legisladores != totalCargado.legisladores) {
+            $scope.mensajeTotales = 'Los votos totales no coinciden con el total cargado';
+      }
+
 
       $scope.corregir = function() {
         $location.url('/carga');
@@ -49,7 +74,6 @@ angular.module('escrutinioApp')
           $timeout(function(){
             $scope.mensaje = '';
           }, 5000);
-
         });
       }
 

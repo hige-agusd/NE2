@@ -16,7 +16,6 @@ html {
   width: 100%;
 }
 body {
-  background-color: #0a96d3;
   font-family: helveticaLTS;
   height: 100%;
   width: 100%;
@@ -35,6 +34,7 @@ body * {
   padding: 0;
 }
 .home {
+  background-color: #0a96d3;
   height: 100%;
   width: 100%;
   align-content: center;
@@ -89,6 +89,12 @@ h3{
   font-size: 45px;
   margin-left: 10px;
   margin-top: 10px;
+}
+.login {
+  background-color: #0a96d3;
+  height: 100%;
+  position: absolute;
+  top: 0;
 }
 .login .form {
   color: #333740;
@@ -146,6 +152,7 @@ h3{
   padding: 0;
 }
 .mesas .head {
+  background-color: #0a96d3;
   color: #fff;
   height: 10%;
   min-height: 61.5px;
@@ -194,6 +201,7 @@ h3{
   padding: 0;
 }
 .carga .head {
+  background-color: #0a96d3;
   color: #fff;
   height: 10%;
   font-weight: bold;
@@ -266,6 +274,12 @@ h3{
 .carga .datos .banner-lista .logo-lista.logo-img-ec{
   background-image: url('../images/lista_evolucion.png');
 }
+.carga .datos .banner-lista .logo-lista.logo-img-ayl{
+  background-image: url('../images/lista_ayl.jpg');
+}
+.carga .datos .banner-lista .logo-lista.logo-img-fit{
+  background-image: url('../images/lista_fit.png');
+}
 .carga .datos .diputados,
 .carga .datos .legisladores {
   display: inline-block;
@@ -309,6 +323,7 @@ h3{
   padding: 0;
 }
 .confirmacion .head {
+  background-color: #0a96d3;
   color: #fff;
   height: 10%;
   font-weight: bold;
@@ -401,6 +416,10 @@ h3{
   }
   &.error{
     background: #aa0000;
+  }
+  &.warn {
+    font-size: 14px;
+    background: #daa520;
   }
 }
 .resultados {

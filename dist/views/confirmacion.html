@@ -10,10 +10,15 @@
         <span class="col-xs-3">Sen.</span>
       </div>
       <div class="row detalle" ng-class="{par: lista.par}" ng-repeat="lista in resultados">
-        <span class="nom-fuerza col-xs-6" ng-class="{'nombre-largo': lista.nombre.length >= 12}">{{lista.lista}} <br/> {{lista.nombre}}</span>
+        <span class="nom-fuerza col-xs-6" ng-class="{'nombre-largo': lista.nombre.length >= 12}">
+          {{(lista.lista > 3) ? lista.lista : ''}} <br/> {{lista.nombre}}
+        </span>
         <span class="votos col-xs-3">{{(lista.diputados) ? lista.diputados : 0}}</span>
         <span class="votos col-xs-3">{{(lista.legisladores) ? lista.legisladores : 0}}</span>
       </div>
+    </div>
+    <div class="mensaje-confirmacion warn" ng-if="mensajeTotales">
+      <span>{{mensajeTotales}}</span>
     </div>
     <div class="container boton">
       <button type="button" name="button" ng-click="corregir()" class="btn primary-btn corregir">Corregir</button>
