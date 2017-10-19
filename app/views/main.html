@@ -8,7 +8,7 @@
         <span class="col-xs-4"></span>
         <span class="col-xs-4 dips">Diputados</span>
       </div>
-      <div class="row detalle" ng-repeat="resultado in resultados">
+      <div class="row detalle" ng-repeat="resultado in resultados" ng-if="resultado.computa">
         <span class="fuerza col-xs-4">{{resultado.partidoNumero}}<br/>{{resultado.partido}}</span>
         <div class="col-xs-8">
           <span class="col-xs-12"></span>
@@ -25,7 +25,7 @@
         <span class="col-xs-4"></span>
         <span class="col-xs-4 legs">Legisladores</span>
       </div>
-      <div class="row detalle" ng-repeat="resultado in resultados">
+      <div class="row detalle" ng-repeat="resultado in resultados" ng-if="resultado.computa">
         <span class="fuerza col-xs-4">{{resultado.partidoNumero}}<br/>{{resultado.partido}}</span>
         <div class="col-xs-8">
           <span class="col-xs-12"></span>

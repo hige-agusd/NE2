@@ -17,11 +17,9 @@ angular.module('escrutinioApp')
      //SessionSrv.login({name: 'pabloTest', password: 'test'}).then(function(response){
        //ListasSrv.getListas().then(function(listas) {
          //$scope.listas = listas;
-         //console.log(listas)
          ResultadosSrv.getResultados().then(function(resultados) {
+           resultados = mostrarResultados(resultados);
            $scope.resultados = resultados;
-           console.log(resultados)
-           mostrarResultados();
          });
        //});
      //});
@@ -34,12 +32,18 @@ angular.module('escrutinioApp')
            retVal += (b) ? b.toString(16) : '00';
            retVal += (g) ? g.toString(16) : '00';
            retVal += (r) ? r.toString(16) : '00';
-           console.log(retVal, r,g,b, longColor)
        return retVal;
      };
 
-     function mostrarResultados() {
-       //console.log($scope.listas, $scope.resultados);
+     function mostrarResultados(resultados) {
+       angular.forEach(resultados, function(resultadoLista) {
+         switch (resultadoLista.partidoNumero) {
+           case 187: resultadoLista.partido = 'AyL'; break;
+           case 505: resultadoLista.partido = 'FIT'; break;
+           case 507: resultadoLista.partido = '1 País'; break;
+         }
+       });
+       return resultados;
      }
 
   }]);
