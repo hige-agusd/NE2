@@ -1,0 +1,34 @@
+<div class="container-fluid carga" ng-show="partido">
+  <header class="container-fluid head">
+    <span class="mesa-head">Mesa N° <span class="num-mesa">{{mesa}}</span></span>
+  </header>
+  <main class="container-fluid datos">
+    <div class="banner-lista">
+      <div class="numero-lista-wrapper">
+        <span class="numero-lista">{{lista}}</span>
+      </div>
+      <div class="logo-lista"
+           ng-class="{
+           'logo-img-up': partido.lista == 10,
+           'logo-img-pro': partido.lista == 12,
+           'logo-img-1p': partido.lista == 66,
+           'texto': nombre
+           }">
+        {{nombre}}
+      </div>
+    </div>
+    <form ng-submit="agregarDatos($event)">
+      <div class="diputados">
+        <label>Diputados</label>
+        <input type="number" id="diputados" ng-model="votos.diputados">
+      </div>
+      <div class="legisladores">
+        <label>Legisladores</label>
+        <input type="number" id="legisladores" ng-model="votos.legisladores">
+      </div>
+      <div class="boton container">
+        <button type="submit" name="button" class="btn primary-btn siguiente">Seguir</button>
+      </div>
+    </form>
+  </main>
+</div>
