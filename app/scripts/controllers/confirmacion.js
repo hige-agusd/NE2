@@ -14,17 +14,24 @@ angular.module('escrutinioApp')
       $scope.resultados = [];
       $scope.mensaje = '';
       $scope.ok = true;
-      
+
       var resultados = ResultadosSrv.getDatosMesa(MesasSrv.getMesa());
-      
+
       if(resultados.votos.length) {
         _.each(resultados.votos, function(resultadoLista, index) {
           resultadoLista.par = ((index + 1) % 2 == 0);
-          resultadoLista['nombre'] = ListasSrv.getListaPorNumero(resultadoLista.lista).nombre;
+          switch (resultadoLista.lista) {
+            case 187: resultadoLista.nombre = 'AyL'; break;
+            case 505: resultadoLista.nombre = 'FIT'; break;
+            case 507: resultadoLista.nombre = '1 País'; break;
+            default:
+          resultadoLista.nombre = ListasSrv.getListaPorNumero(resultadoLista.lista).nombre;
+
+          }
           $scope.resultados.push(resultadoLista);
         });
       }
-      
+
       $scope.corregir = function() {
         $location.url('/carga');
       };
@@ -42,7 +49,7 @@ angular.module('escrutinioApp')
           $timeout(function(){
             $scope.mensaje = '';
           }, 5000);
-          
+
         });
       }
 

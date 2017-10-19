@@ -92,7 +92,7 @@ h3{
 }
 .login .form {
   color: #333740;
-  margin-top: 55%;
+  margin-top: 20%;
 }
 .login input {
   color: #333740;
@@ -149,14 +149,13 @@ h3{
   color: #fff;
   height: 10%;
   min-height: 61.5px;
-  padding-left: 10%;
   padding-top: 4%;
+  text-align: center;
   text-transform: uppercase;
 }
 .mesas .head .encabezado-mesas{
-  font-size: 23px;
+  font-size: 19px;
   letter-spacing: 1px;
-  text-align: center;
   width: 100%;
 }
 .mesas main {
@@ -226,7 +225,7 @@ h3{
 }
 .carga .datos .banner-lista .numero-lista-wrapper{
   border-right: 1.5px solid #0a96d3;
-  height: 70%;
+  height: 50px;
   margin-top: 8%;
   padding-right: 3%;
   padding-top: 4%;
@@ -270,7 +269,6 @@ h3{
 .carga .datos .diputados,
 .carga .datos .legisladores {
   display: inline-block;
-  margin-left: 8%;
   margin-top: 12%;
   width: 80%;
 }
@@ -286,7 +284,7 @@ h3{
   border-radius: 2px;
   font-size: 30px;
   height: 80%;
-  margin-left: 2%;
+  margin-left: 8%;
   padding-right: 3%;
   text-align: right;
   width: 40%;
@@ -357,9 +355,13 @@ h3{
 .recuento .detalle .nom-fuerza {
   font-size: 18px;
 }
+.recuento .detalle .nom-fuerza.nombre-largo {
+  font-size: 16px;
+}
 .recuento .detalle .votos {
   border-left: 1px solid #333740;
   font-size: 40px;
+  height: 100%;
   text-align: right;
 }
 .recuento .detalle.par {
